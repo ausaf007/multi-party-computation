@@ -25,6 +25,7 @@ public class MainClass {
         Bip39Wallet walletName = WalletUtils.generateBip39Wallet(walletPassword, walletDirectory);
         return walletName;
     }
+
     public static void main(String[] args) throws IOException, CipherException, InterruptedException, ExecutionException {
         Bip39Wallet mainWallet = null;
         Map<Integer, byte[]> mainMap = new HashMap<>();
