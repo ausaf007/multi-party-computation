@@ -63,7 +63,8 @@ Download and install [Maven 3.8.1](https://maven.apache.org/install.html) (or hi
    ```
 5. Generate ethereum wallet and enter new wallet password:
    ``` 
-   generate eth wallet
+   (MAIN) MPC>>generate eth wallet
+   Enter Password for Wallet:1234
    ```
 6. Enter the value for n and k. Note that n>k.
    * **n**: Total number of shares
