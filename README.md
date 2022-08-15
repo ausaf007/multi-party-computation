@@ -1,9 +1,5 @@
 <h1 align="center">Multi Party Computation with Shamir's Secret Sharing</h1>
 <p align="center">
-  
-  <a aria-label="GitHub issues" href="https://github.com/ausaf007/multi-party-computation/issues" target="_blank">
-    <img src="https://img.shields.io/github/issues/ausaf007/multi-party-computation?style=for-the-badge" />
-  </a>
   <a aria-label="GitHub license" href="https://github.com/ausaf007/multi-party-computation/blob/master/LICENSE" target="_blank">
     <img src= "https://img.shields.io/badge/LICENSE-MIT-brightgreen?style=for-the-badge" />
   </a>
