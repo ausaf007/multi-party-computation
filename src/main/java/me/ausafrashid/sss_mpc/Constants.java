@@ -1,4 +1,4 @@
-package me.mdausafrashid.sss_mpc;
+package me.ausafrashid.sss_mpc;
 
 public class Constants {
     static final String PATH = "src//main//resources";

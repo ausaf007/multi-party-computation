@@ -59,7 +59,7 @@ Download and install [Maven 3.8.1](https://maven.apache.org/install.html) (or hi
    ```
 4. Run the Java app:
    ``` 
-   java -cp target\multi-party-computation-0.0.1-jar-with-dependencies.jar me.mdausafrashid.sss_mpc.MainClass
+   java -cp target\multi-party-computation-0.0.1-jar-with-dependencies.jar me.ausafrashid.sss_mpc.MainClass
    ```
 5. Generate ethereum wallet and enter new wallet password:
    ``` 

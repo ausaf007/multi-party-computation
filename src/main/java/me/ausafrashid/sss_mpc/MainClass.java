@@ -1,4 +1,4 @@
-package me.mdausafrashid.sss_mpc;
+package me.ausafrashid.sss_mpc;
 
 import com.codahale.shamir.Scheme;
 import org.web3j.crypto.*;
@@ -16,12 +16,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
-import static me.mdausafrashid.sss_mpc.Constants.PATH;
-import static me.mdausafrashid.sss_mpc.Constants.RADIX;
-
 public class MainClass {
     private static Bip39Wallet generate(String walletPassword) throws CipherException, IOException {
-        File walletDirectory = new File(PATH);
+        File walletDirectory = new File(Constants.PATH);
         Bip39Wallet walletName = WalletUtils.generateBip39Wallet(walletPassword, walletDirectory);
         return walletName;
     }
@@ -54,9 +51,9 @@ public class MainClass {
                 System.out.println("Ethereum Wallet Generated Successfully!");
 
                 Credentials credentials = WalletUtils.loadBip39Credentials(walletPassword, mainWallet.getMnemonic());
-                String privateKey = credentials.getEcKeyPair().getPrivateKey().toString(RADIX);
+                String privateKey = credentials.getEcKeyPair().getPrivateKey().toString(Constants.RADIX);
 
-                publicKey = credentials.getEcKeyPair().getPublicKey().toString(RADIX);
+                publicKey = credentials.getEcKeyPair().getPublicKey().toString(Constants.RADIX);
 
                 System.out.println("Main Private Key: " + privateKey);
                 System.out.println("Initiating Private Key Splitting");
@@ -110,13 +107,13 @@ public class MainClass {
                 System.out.println("Enter signing message =");
                 message = sc.nextLine();
 
-                ECKeyPair pair = new ECKeyPair(new BigInteger(recoveredSecretString, RADIX), new BigInteger(publicKey, RADIX));
+                ECKeyPair pair = new ECKeyPair(new BigInteger(recoveredSecretString, Constants.RADIX), new BigInteger(publicKey, Constants.RADIX));
                 signature = Sign.signMessage(message.getBytes(StandardCharsets.UTF_8), pair);
 
             } else if (str.equals("validate")) {
                 // Beginning Signature Verification Process
                 try {
-                    String pubKey = Sign.signedMessageToKey(message.getBytes(StandardCharsets.UTF_8), signature).toString(RADIX);
+                    String pubKey = Sign.signedMessageToKey(message.getBytes(StandardCharsets.UTF_8), signature).toString(Constants.RADIX);
                     System.out.println("PubKey=" + pubKey);
                     System.out.println("publicKey=" + publicKey);
                     if (pubKey.equals(publicKey)) {
